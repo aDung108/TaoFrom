@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch họp công ty</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 24px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 650px;
+        }
+
+        th, td {
+            border: 1px solid #444444;
+            padding: 10px 14px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td.content {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Lịch họp công ty</h1>
+
+    <table>
+        <tr>
+            <th>Ngày</th>
+            <th>Giờ</th>
+            <th>Nội dung cuộc họp</th>
+        </tr>
+        <tr>
+            <!-- rowspan="2": Gộp 2 hàng của ngày Thứ Hai vì có 2 cuộc họp -->
+            <td rowspan="2">Thứ Hai (20/10)</td>
+            <td>08:30 - 09:30</td>
+            <td class="content">Họp giao ban đầu tuần toàn công ty</td>
+        </tr>
+        <tr>
+            <!-- Hàng thứ hai chỉ cần 2 thẻ <td> vì cột Ngày đã bị gộp ở hàng trên -->
+            <td>14:00 - 15:30</td>
+            <td class="content">Đánh giá tiến độ dự án nội bộ</td>
+        </tr>
+        <tr>
+            <td>Thứ Ba (21/10)</td>
+            <td>09:00 - 11:00</td>
+            <td class="content">Làm việc với khách hàng mới</td>
+        </tr>
+        <tr>
+            <td>Thứ Tư (22/10)</td>
+            <!-- colspan="2": Gộp cột Giờ và Nội dung khi cuộc họp kéo dài cả ngày -->
+            <td colspan="2" class="content">Họp chiến lược kế hoạch kinh doanh quý (Kéo dài cả ngày từ 08:00 - 17:00)</td>
+        </tr>
+    </table>
+
+</body>
+</html>
