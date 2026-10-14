@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Research Survey</title>
+    <style>
+        body {
+            font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
+            background-color: #f7f9fa;
+            color: #333333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .survey-container {
+            background-color: #ffffff;
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 25px 30px;
+            border: 1px solid #e1e4e8;
+            border-radius: 4px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0 0 6px 0;
+            color: #111111;
+        }
+
+        .description {
+            font-size: 13px;
+            color: #666666;
+            margin-top: 0;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px dotted #ccc;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: bold;
+            font-size: 13.5px;
+            margin-bottom: 8px;
+            color: #222222;
+        }
+
+        select {
+            width: 100%;
+            max-width: 450px;
+            padding: 5px 8px;
+            border: 1px solid #7f9db9;
+            border-radius: 2px;
+            font-size: 13px;
+            background-color: #fff;
+        }
+
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .choice-item {
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .choice-item input {
+            margin: 0 8px 0 0;
+            cursor: pointer;
+        }
+
+        .other-input {
+            margin-top: 4px;
+            margin-left: 20px;
+            width: 120px;
+            padding: 3px 6px;
+            border: 1px solid #7f9db9;
+            font-size: 13px;
+        }
+
+        /* Khung nhập tiền tệ (Dollars / Cents) */
+        .price-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            font-size: 14px;
+        }
+
+        .currency-symbol {
+            margin-top: 4px;
+            font-weight: bold;
+        }
+
+        .price-subfield {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-subfield input {
+            padding: 3px 6px;
+            border: 1px solid #7f9db9;
+            font-size: 13px;
+        }
+
+        .input-dollars {
+            width: 65px;
+        }
+
+        .input-cents {
+            width: 25px;
+        }
+
+        .decimal-point {
+            margin-top: 4px;
+            font-weight: bold;
+        }
+
+        .sub-label {
+            font-size: 11px;
+            color: #666666;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="survey-container">
+        <!-- Tiêu đề khảo sát -->
+        <h1>Market Research Survey</h1>
+        <p class="description">Please take a few moments to complete this satisfaction survey.</p>
+
+        <form action="#" method="POST">
+
+            <!-- 1. What is your age range? -->
+            <div class="form-group">
+                <label class="form-label" for="age">What is your age range?</label>
+                <select id="age" name="age_range">
+                    <option value="18-24" selected>18-24</option>
+                    <option value="25-34">25-34</option>
+                    <option value="35-44">35-44</option>
+                    <option value="45-54">45-54</option>
+                    <option value="55+">55+</option>
+                </select>
+            </div>
+
+            <!-- 2. What is your yearly income range? -->
+            <div class="form-group">
+                <label class="form-label" for="income">What is your yearly income range?</label>
+                <select id="income" name="income_range">
+                    <option value="0-25000" selected>$0 - $25,000</option>
+                    <option value="25001-50000">$25,001 - $50,000</option>
+                    <option value="50001-75000">$50,001 - $75,000</option>
+                    <option value="75001-100000">$75,001 - $100,000</option>
+                    <option value="100000+">$100,000+</option>
+                </select>
+            </div>
+
+            <!-- 3. Gender Identity -->
+            <div class="form-group">
+                <label class="form-label">Gender Identity</label>
+                <div class="radio-group">
+                    <label class="choice-item">
+                        <input type="radio" name="gender" value="Male"> Male
+                    </label>
+                    <label class="choice-item">
+                        <input type="radio" name="gender" value="Female"> Female
+                    </label>
+                    <label class="choice-item">
+                        <input type="radio" name="gender" value="Nonbinary"> Nonbinary
+                    </label>
+                    <label class="choice-item">
+                        <input type="radio" name="gender" value="Other"> Other
+                    </label>
+                    <input type="text" class="other-input" name="gender_other" aria-label="Other gender">
+                </div>
+            </div>
+
+            <!-- 4. Which of the following products have your purchased... -->
+            <div class="form-group">
+                <label class="form-label">Which of the following products have your purchased in the last 2 months. Please check all that apply.</label>
+                <div class="checkbox-group">
+                    <label class="choice-item">
+                        <input type="checkbox" name="products" value="Product 1"> Product 1
+                    </label>
+                    <label class="choice-item">
+                        <input type="checkbox" name="products" value="Product 2"> Product 2
+                    </label>
+                    <label class="choice-item">
+                        <input type="checkbox" name="products" value="Product 3"> Product 3
+                    </label>
+                </div>
+            </div>
+
+            <!-- 5. How often would you use our new product? -->
+            <div class="form-group">
+                <label class="form-label">How often would you use our new product?</label>
+                <div class="radio-group">
+                    <label class="choice-item">
+                        <input type="radio" name="frequency" value="Daily"> Daily
+                    </label>
+                    <label class="choice-item">
+                        <input type="radio" name="frequency" value="Weekly"> Weekly
+                    </label>
+                    <label class="choice-item">
+                        <input type="radio" name="frequency" value="Monthly"> Monthly
+                    </label>
+                </div>
+            </div>
+
+            <!-- 6. What would you pay for the new product? -->
+            <div class="form-group">
+                <label class="form-label">What would you pay for the new product?</label>
+                <div class="price-container">
+                    <span class="currency-symbol">$</span>
+                    
+                    <div class="price-subfield">
+                        <input type="text" class="input-dollars" name="price_dollars">
+                        <span class="sub-label">Dollars</span>
+                    </div>
+
+                    <span class="decimal-point">.</span>
+
+                    <div class="price-subfield">
+                        <input type="text" class="input-cents" name="price_cents" maxlength="2">
+                        <span class="sub-label">Cents</span>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>
